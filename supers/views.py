@@ -12,7 +12,18 @@ from django.shortcuts import get_object_or_404
 
 @api_view(['GET', 'POST'])
 def supers_list(request):
+
+  hero_param = request.query_params.get('type')
   
+  supers = Supers.objects.all()
+
+  if hero_param:
+    supers = supers.filter(super_type_id__type=hero_param)
+
+    serializer = SuperSerializer(supers, many=True)
+    return Response(serializer.data)
+
+   
   if request.method == 'GET':
     supers = Supers.objects.all()
     serializer = SuperSerializer(supers, many=True)
