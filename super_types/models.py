@@ -5,15 +5,7 @@ from django.forms import CharField
 
 class SuperType(models.Model):
     type = models.CharField(max_length=255, default = "")
-#     if type == '1':
 
-
-
-
-# class Hero(models.Model):
-
-
-# class Villain(model.Model):
 
 
 
