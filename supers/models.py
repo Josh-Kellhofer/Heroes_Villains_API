@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import CharField
 from super_types.models import SuperType
 
+
 # Create your models here.
 
 class Supers(models.Model):
